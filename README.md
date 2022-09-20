@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# UFood
+For students at the University of Florida WHO need to find food services close to them, THE UFood is a website THAT shows students food options in their budget as well as their proximity. UNLIKE other sites, OUR product is catered toward UF students and will have a pleasant user experience free for all. 
+
+Project created using Javascript, Java, SpringBoot, and create-react-app. This application is structured in the following way:
+
+- ```u-food```: contains all the code for the project (includes server and client side)
+  - ```client```: contains frontend code 
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
