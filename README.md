@@ -1,7 +1,7 @@
 # UFood
 For students at the University of Florida WHO need to find food services close to them, THE UFood is a website THAT shows students food options in their budget as well as their proximity. UNLIKE other sites, OUR product is catered toward UF students and will have a pleasant user experience free for all. 
 
-## Programming Languages: 
+### Programming Languages: 
 - `Front End`: Javascript, HTML, CSS, React JS
 - `Backend`: Java, SpringBoot, Yelp API, REST API
 - `Version Control`: Git, Github
