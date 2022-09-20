@@ -32,10 +32,11 @@ Project created using Javascript, Java, SpringBoot, and create-react-app. This a
 ## How to get running in your environment
 To run this project you will need Java, Gradle, and npm install in your system:
 - Java: `Java 17`
-- Gradle: It need to be installed
+- Gradle: Latest version should be fine
 - npm: I think you can use a ^16.0.0 version
 
 ## How to run the frontend | Recomened code editor for frontend is [Visual Studio Code](https://code.visualstudio.com)
+> Clone the repo to a folder of you're liking using the command prompt `git clone`
 
 First you need to navigate to the `client` folder. Example for Mac `cd client`
 
@@ -55,6 +56,7 @@ Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ## How to run the backend | Recomened IDE for backend is [IntelliJ](https://www.jetbrains.com/idea/)
+> Clone the repo to a folder of you're liking using the command prompt `git clone`
 
 First you need to setup your IDE, so it can start running the server
 
