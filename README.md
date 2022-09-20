@@ -1,8 +1,44 @@
-# Getting Started with Create React App
+# UFood
+For students at the University of Florida WHO need to find food services close to them, THE UFood is a website THAT shows students food options in their budget as well as their proximity. UNLIKE other sites, OUR product is catered toward UF students and will have a pleasant user experience free for all. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Programming Languages: 
+- `Front End`: Javascript, HTML, CSS, React JS
+- `Backend`: Java, SpringBoot, Yelp API, REST API
+- `Version Control`: Git, Github
+- `CI/CD`: CircleCI
 
-## Available Scripts
+
+## Source folder
+Project created using Javascript, Java, SpringBoot, and create-react-app. This application is structured in the following way:
+- `u-food`: contains all the code for the project (includes server and client side)
+  - `client`: contains frontend code 
+    - `public`: contain all the statics files such as the website favicon and the main html file of the website
+    - `src`: contains all the frontend code
+      - `components`: contains the component files
+      - `assets`: contains all the assets of the project
+      - `styles`: contains all the styles such as CSS
+    - `__tests__`: contains all the test for each component and functions
+  
+  - `src`: contains all the backend code
+    - `main`: contains all the logic and server code (we using the [MVC](https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm) pattern)
+      - `java/com/api/developer/ufood`: contains the main code
+        - `controller`: controller acts on both model and view. It controls the data flow into model object and updates the view whenever data changes. It keeps view and model separate.
+        - `model`: dodel represents an object or JAVA POJO carrying data. It can also have logic to update controller if its data changes.
+        - `view`: view represents the visualization of the data that model contains.
+        - `UFoodApplication`: is the main file that will run the server. (Don't touch)
+     - `test`: contains all the test files
+        - `java/com/api/developer/ufood`: contains the main code for testing (Please call a test file like this NameHere.Test.java
+
+## How to get running in your environment
+To run this project you will need Java, Gradle, and npm install in your system:
+- Java: `Java 17`
+- Gradle: Latest version should be fine
+- npm: I think you can use a ^16.0.0 version
+
+## How to run the frontend | Recomened code editor for frontend is [Visual Studio Code](https://code.visualstudio.com)
+> Clone the repo to a folder of you're liking using the command prompt `git clone`
+
+First you need to navigate to the `client` folder. Example for Mac `cd client`
 
 In the project directory, you can run:
 
@@ -19,52 +55,42 @@ You may also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## How to run the backend | Recomened IDE for backend is [IntelliJ](https://www.jetbrains.com/idea/)
+> Clone the repo to a folder of you're liking using the command prompt `git clone`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+First you need to setup your IDE, so it can start running the server
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Check that you are running Java 17 in your IDE
+  - Go to `file` on the top left
+    - Go to `Project Structure`
+      - Go to `Project` and make sure that `SDK` is set to Java 17. If you don't have Java 17 you will need to install it
+      - After setting Java 17, click `Apply` and `OK`
+      
+![project-structure](https://user-images.githubusercontent.com/58098790/191312941-70add29a-2ff8-4ae9-bae3-03c285f4cef6.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. After you are running Java 17 in the IDE, you need to set the run file
+3. First you need to build the project by either clicking on the `build` button or by going on the terminal and running ` gradle build`
+4. After build is `BUILD SUCCESSFUL` you do this to run the App:
+  1. Method 1
+    - Go to the `UFoodApplication` file inside `main/java/com/api/developer/ufood` and run by clicking on the `Play` green button next to the class name
+  
+  ![run-method-1](https://user-images.githubusercontent.com/58098790/191313836-f226ba9b-1d7c-4cff-8105-140b5d603cfc.png)
+  
+  2. Method 2
+  - Set up the Run on the IDE
+  
+    1. Step 1 - Click on `Edit Configuration` and it would open a menu
+    
+      ![step-1](https://user-images.githubusercontent.com/58098790/191316103-aba061e0-6dd6-4ba1-b811-cbd7c6c5a905.png)
+      
+    2. Step 2 - Add a new configuration on the top left of the menu (Add `SpringBoot`)
+    
+      ![step-2](https://user-images.githubusercontent.com/58098790/191317246-27689878-1a75-4e78-b6ec-2b3176168a34.png)
+    
+    3. Step 3 - Add everything like the one on the picture below
+    
+      ![step-3](https://user-images.githubusercontent.com/58098790/191317485-9cec04b3-3330-4e1f-98ed-5e4112fc5dd3.png)
+    
+    4. Step 4 - Click `Apply` and then `OK`
+    5. Final step - Just run the app by clicking on the `Play` green button on top
+    
