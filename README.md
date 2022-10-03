@@ -7,6 +7,8 @@ For students at the University of Florida WHO need to find food services close t
 - `Version Control`: Git, Github
 - `CI/CD`: CircleCI
 
+### System Architecture (This design could change)
+![UFood System Design](https://user-images.githubusercontent.com/58098790/193623049-3951a13e-24f8-48a1-967d-0dcadc45f8b9.png)
 
 ## Source folder
 Project created using Javascript, Java, SpringBoot, and create-react-app. This application is structured in the following way:
