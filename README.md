@@ -1,16 +1,24 @@
 # UFood
-For students at the University of Florida WHO need to find food services close to them, THE UFood is a website THAT shows students food options in their budget as well as their proximity. UNLIKE other sites, OUR product is catered toward UF students and will have a pleasant user experience free for all. 
+For students at the University of Florida who need to find food services close to them, the UFood is a website that shows students food options in their budget as well as their proximity. Unlike other sites, our product is catered toward UF students and will have a pleasant user experience free for all. 
 
-### Programming Languages: 
+## Table of contents
+- 🚀 [Programming Languages Used](#programming-languages)
+- 📒 [System Architecture](#system-architecture)
+- 🏅 [Project Structure](#project-structure)
+- 👥 [Getting Started](#getting-started)
+  - 👨‍💻 [How to run the frontend](#how-to-run-the-frontend)
+  - 💵 [How to run the backend](#how-to-run-the-backend)
+
+## Programming Languages: 
 - `Front End`: Javascript, HTML, CSS, React JS
 - `Backend`: Java, SpringBoot, Yelp API, REST API
 - `Version Control`: Git, Github
 - `CI/CD`: CircleCI
 
-### System Architecture (This design could change)
+## System Architecture
 ![UFood System Design](https://user-images.githubusercontent.com/58098790/193623049-3951a13e-24f8-48a1-967d-0dcadc45f8b9.png)
 
-## Source folder
+## Project Structure
 Project created using Javascript, Java, SpringBoot, and create-react-app. This application is structured in the following way:
 - `u-food`: contains all the code for the project (includes server and client side)
   - `client`: contains frontend code 
@@ -31,20 +39,21 @@ Project created using Javascript, Java, SpringBoot, and create-react-app. This a
      - `test`: contains all the test files
         - `java/com/api/developer/ufood`: contains the main code for testing (Please call a test file like this NameHere.Test.java
 
-## How to get running in your environment
+## Getting Started
 To run this project you will need Java, Gradle, and npm install in your system:
 - Java: `Java 17`
 - Gradle: Latest version should be fine
 - npm: I think you can use a ^16.0.0 version
 
-## How to run the frontend | Recomened code editor for frontend is [Visual Studio Code](https://code.visualstudio.com)
-> Clone the repo to a folder of you're liking using the command prompt `git clone`
+## How to run the frontend
+> Clone the repo to a folder of you're liking using the command prompt `git clone`.
+> Recommended code editor for frontend is [Visual Studio Code](https://code.visualstudio.com)
 
 First you need to navigate to the `client` folder. Example for Mac `cd client`
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -52,13 +61,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+#### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## How to run the backend | Recomened IDE for backend is [IntelliJ](https://www.jetbrains.com/idea/)
-> Clone the repo to a folder of you're liking using the command prompt `git clone`
+## How to run the backend
+> Clone the repo to a folder of you're liking using the command prompt `git clone`.
+> Recommended IDE for backend is [IntelliJ](https://www.jetbrains.com/idea/)
 
 First you need to setup your IDE, so it can start running the server
 
