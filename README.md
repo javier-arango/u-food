@@ -3,6 +3,7 @@ For students at the University of Florida who need to find food services close t
 
 ## Table of contents
 - 🚀 [Tech Stack](#tech-stack)
+- 📲 [Application type](#app-type)
 - 📒 [System Architecture](#system-architecture)
 - 🏅 [Project Structure](#project-structure)
 - 👥 [Getting Started](#getting-started)
@@ -15,6 +16,17 @@ For students at the University of Florida who need to find food services close t
 - `Database`: MySQL
 - `Version Control`: Git, Github
 - `CI/CD`: CircleCI
+
+## App Type
+We are going to develop a `CRUD` Application:
+> Learn more [here](https://www.freecodecamp.org/news/crud-operations-explained/)
+
+|CRUD OPERATION | HTTP REQUEST METHOD|
+|---------------|--------------------|
+|Create         |POST                |
+|Read           |GET                 |
+|Update         |PUT or PATCH        |
+|Delete         |DELETE              |
 
 ## System Architecture
 ![UFood System Design](https://user-images.githubusercontent.com/58098790/193623049-3951a13e-24f8-48a1-967d-0dcadc45f8b9.png)
