@@ -29,7 +29,7 @@ We are going to develop a `CRUD` Application:
 |Delete         |DELETE              |
 
 ## System Architecture
-![UFood System Design](https://user-images.githubusercontent.com/58098790/193623049-3951a13e-24f8-48a1-967d-0dcadc45f8b9.png)
+![UFood Architecture Design](https://user-images.githubusercontent.com/58098790/196183233-917bf032-a774-4bcb-87b6-fee185df8a5a.png)
 
 ## Project Structure
 Project created using Javascript, Java, SpringBoot, and create-react-app. This application is structured in the following way:
