@@ -1,4 +1,4 @@
-package com.api.developer.ufood.model;
+package com.api.ufood.model;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;

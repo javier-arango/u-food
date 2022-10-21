@@ -1,4 +1,4 @@
-package com.api.developer.ufood.model;
+package com.api.ufood.model;
 
 
 /**
