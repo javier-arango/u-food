@@ -36,7 +36,8 @@ public class RestaurantService {
 
         // Set header Authorization to the Yelp API Key
         HttpHeaders headers = new HttpHeaders();
-        headers.setBearerAuth(API_KEY);
+
+        if (API_KEY != null) { headers.setBearerAuth(API_KEY); }
 
         // Request body
         this.entity = new HttpEntity<>("body", headers);
