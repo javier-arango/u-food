@@ -52,6 +52,9 @@ Project created using Javascript, Java, SpringBoot, and create-react-app. This a
      - `test`: contains all the test files
         - `java/com/api/developer/ufood`: contains the main code for testing (Please call a test file like this NameHere.Test.java
 
+## API Documentation
+Run the backend server in go to [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+
 ## Getting Started
 To run this project you will need Java, Gradle, and npm install in your system:
 - Java: `Java 17`
