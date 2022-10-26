@@ -6,7 +6,7 @@ import com.api.ufood.model.restaurant.Restaurant;
 import com.api.ufood.model.restaurant.Reviews;
 import org.springframework.stereotype.Service;
 
-import io.github.cdimascio.dotenv.Dotenv;
+//import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class RestaurantService {
     private final String HOST_URL;
-    private final String API_KEY;
+    //private final String API_KEY;
 
     private final RestTemplate restTemplate;
     private final HttpEntity<String> entity;
@@ -31,13 +31,13 @@ public class RestaurantService {
         this.HOST_URL = "https://api.yelp.com/v3/businesses/";
 
         // Load API Key from .env
-        Dotenv dotenv = Dotenv.load();
-        this.API_KEY = dotenv.get("YELP_API_KEY");
+       // Dotenv dotenv = Dotenv.load();
+        //this.API_KEY = dotenv.get("YELP_API_KEY");
 
         // Set header Authorization to the Yelp API Key
         HttpHeaders headers = new HttpHeaders();
 
-        if (API_KEY != null) { headers.setBearerAuth(API_KEY); }
+        //if (API_KEY != null) { headers.setBearerAuth(API_KEY); }
 
         // Request body
         this.entity = new HttpEntity<>("body", headers);
