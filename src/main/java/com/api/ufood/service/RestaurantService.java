@@ -27,9 +27,11 @@ public class RestaurantService {
         // Get rest template to do the http request
         this.restTemplate = restTemplateBuilder.build();
 
-        // Load Environmental variables from .env
+        // Set the HOST URL
+        this.HOST_URL = "https://api.yelp.com/v3/businesses/";
+
+        // Load API Key from .env
         Dotenv dotenv = Dotenv.load();
-        this.HOST_URL = dotenv.get("YELP_HOST_URL");;
         this.API_KEY = dotenv.get("YELP_API_KEY");
 
         // Set header Authorization to the Yelp API Key
@@ -43,6 +45,7 @@ public class RestaurantService {
 
     /**
      * This method will return a List of Restaurant Object according to the default search
+     * This method will be used to get the default restaurants for a user | Is use for the home page
      * {@link #getAllRestaurants(String, int, String, int)}
      * @return Restaurant
      *
@@ -77,6 +80,7 @@ public class RestaurantService {
 
         return restaurantDetails;
     }
+
 
     /**
      * This method will return a Reviews Object according to the restaurant id
