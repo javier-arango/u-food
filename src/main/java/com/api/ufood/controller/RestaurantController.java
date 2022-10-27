@@ -4,42 +4,31 @@ import com.api.ufood.model.restaurant.Businesses;
 import com.api.ufood.model.restaurant.Restaurant;
 import com.api.ufood.model.restaurant.Reviews;
 import com.api.ufood.service.RestaurantService;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/api/v1/")
 public class RestaurantController {
 
-    @GetMapping("/restaurants")
-    @ApiOperation(
-            value= "Find all the restaurants using a default search",
-            notes = "This API request use default params underneath to make calls to YELP API:\n \nlocation=University of Florida \nlimit=10 \nradius=4000",
-            response = Businesses.class
-    )
-    public Businesses getAllRestaurants() {
-        RestTemplateBuilder restTemplate = new RestTemplateBuilder();
-
-        // Create service object
-        RestaurantService restaurantService = new RestaurantService(restTemplate);
-
-        // Make HTTP request to the Yelp API
-        return restaurantService.getAllRestaurants("University of Florida", 10, "distance", 40000);
-    }
-
-    @GetMapping("/restaurants/search/{location}&{limit}&{sortBy}&{radius}")
+    @GetMapping("/restaurants/search")
     @ApiOperation(
             value= "Search for restaurants by location, limit, sortBy, and radius",
             notes = "Provide a location, limit, sortBy, and radius to look up restaurants from the YELP API",
             response = Businesses.class
     )
-    public Businesses searchRestaurants(@PathVariable String location, @PathVariable int limit, @PathVariable String sortBy, @PathVariable int radius) {
+    public Businesses searchRestaurants(
+            @RequestParam String location,
+            @RequestParam int limit,
+            @RequestParam(defaultValue = "distance") String sortBy,
+            @RequestParam(defaultValue = "40000") int radius)
+    {
         RestTemplateBuilder restTemplate = new RestTemplateBuilder();
 
         // Create service object
