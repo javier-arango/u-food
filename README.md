@@ -1,4 +1,6 @@
 # UFood
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/javier-arango/u-food/tree/main.svg?style=svg&circle-token=a171409f2e916d7bb610608209b330ec8fa842bf)](https://dl.circleci.com/status-badge/redirect/gh/javier-arango/u-food/tree/main)
+
 For students at the University of Florida who need to find food services close to them, the UFood is a website that shows students food options in their budget as well as their proximity. Unlike other sites, our product is catered toward UF students and will have a pleasant user experience free for all. 
 
 ## Table of contents
