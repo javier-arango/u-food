@@ -2,46 +2,34 @@ package com.api.ufood.service;
 
 import com.api.ufood.model.restaurant.Businesses;
 import com.api.ufood.model.restaurant.Restaurant;
-
 import com.api.ufood.model.restaurant.Reviews;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.client.RestTemplate;
 
 
 @Service
 public class RestaurantService {
-    private final String HOST_URL;
 
-    private final RestTemplate restTemplate;
-    private final HttpEntity<String> entity;
+    @Value("${yelp.host-url}")
+    private String hostUrl;
 
-    // Constructor
-    public RestaurantService(RestTemplateBuilder restTemplateBuilder) {
-        // Get rest template to do the http request
-        this.restTemplate = restTemplateBuilder.build();
+    @Autowired
+    private HttpEntity<String> entity;
 
-        // Set the HOST URL
-        this.HOST_URL = "https://api.yelp.com/v3/businesses/";
-
-        // Set header Authorization to the Yelp API Key
-        HttpHeaders headers = new HttpHeaders();
-
-        headers.setBearerAuth(System.getenv("YELP_API_KEY"));
-
-        // Request body
-        this.entity = new HttpEntity<>("body", headers);
-    }
+    @Autowired
+    private RestTemplate restTemplate;
 
 
     /**
      * This method will return a List of Restaurant Object according to the default search
      * This method will be used to get the default restaurants for a user | Is use for the home page
-     * {@link #getAllRestaurants(String, int, String, int)}
+     * {@link #searchRestaurants(String, int, String, int)}
      * @return Restaurant
      *
      * @param limit | Number of business results to return. By default, it will return 10. Maximum is 50.
@@ -49,14 +37,15 @@ public class RestaurantService {
      * @param radius | A suggested search radius in meters. The max value is 40000 meters (about 25 miles). The default is 25 miles
      *
      */
-    public Businesses getAllRestaurants(String location, int limit, String sortBy, int radius) {
+    public Businesses searchRestaurants(String location, int limit, String sortBy, int radius) {
         return restTemplate.exchange(
-                HOST_URL +
+                hostUrl +
                 "search?location=" + location +
                 "&term=restaurants" +
                 "&limit=" + limit +
                 "&sort_by=" + sortBy +
-                "&radius=" + radius,
+                "&radius=" + radius +
+                "&open_now=true",
                 HttpMethod.GET, entity, Businesses.class).getBody();
     }
 
@@ -67,8 +56,11 @@ public class RestaurantService {
      * @return Restaurant
      */
     public Restaurant getRestaurant(String id) {
+
         // Get restaurant details
-        Restaurant restaurantDetails = restTemplate.exchange(HOST_URL + id, HttpMethod.GET, entity, Restaurant.class).getBody();
+        Restaurant restaurantDetails = restTemplate.exchange(
+                hostUrl + id,
+                HttpMethod.GET, entity, Restaurant.class).getBody();
 
         // Get Restaurant reviews
         if (restaurantDetails != null) restaurantDetails.setReview(getReviews(restaurantDetails.getId()));
@@ -82,5 +74,7 @@ public class RestaurantService {
      * {@link #getReviews(String)}
      * @return Restaurant
      */
-    public Reviews getReviews(String id) { return restTemplate.exchange(HOST_URL + id + "/reviews", HttpMethod.GET, entity, Reviews.class).getBody(); }
+    public Reviews getReviews(String id) { return restTemplate.exchange(
+            hostUrl + id + "/reviews",
+            HttpMethod.GET, entity, Reviews.class).getBody(); }
 }
