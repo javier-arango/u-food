@@ -1,4 +1,6 @@
 # UFood
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/javier-arango/u-food/tree/main.svg?style=svg&circle-token=a171409f2e916d7bb610608209b330ec8fa842bf)](https://dl.circleci.com/status-badge/redirect/gh/javier-arango/u-food/tree/main)
+
 For students at the University of Florida who need to find food services close to them, the UFood is a website that shows students food options in their budget as well as their proximity. Unlike other sites, our product is catered toward UF students and will have a pleasant user experience free for all. 
 
 ## Table of contents
@@ -51,6 +53,9 @@ Project created using Javascript, Java, SpringBoot, and create-react-app. This a
         - `UFoodApplication`: is the main file that will run the server. (Don't touch)
      - `test`: contains all the test files
         - `java/com/api/developer/ufood`: contains the main code for testing (Please call a test file like this NameHere.Test.java
+
+## API Documentation
+Run the backend server in go to [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
 ## Getting Started
 To run this project you will need Java, Gradle, and npm install in your system:

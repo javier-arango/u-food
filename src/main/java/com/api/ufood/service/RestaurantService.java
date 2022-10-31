@@ -6,7 +6,6 @@ import com.api.ufood.model.restaurant.Restaurant;
 import com.api.ufood.model.restaurant.Reviews;
 import org.springframework.stereotype.Service;
 
-import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -17,7 +16,6 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class RestaurantService {
     private final String HOST_URL;
-    private final String API_KEY;
 
     private final RestTemplate restTemplate;
     private final HttpEntity<String> entity;
@@ -27,14 +25,13 @@ public class RestaurantService {
         // Get rest template to do the http request
         this.restTemplate = restTemplateBuilder.build();
 
-        // Load Environmental variables from .env
-        Dotenv dotenv = Dotenv.load();
-        this.HOST_URL = dotenv.get("YELP_HOST_URL");;
-        this.API_KEY = dotenv.get("YELP_API_KEY");
+        // Set the HOST URL
+        this.HOST_URL = "https://api.yelp.com/v3/businesses/";
 
         // Set header Authorization to the Yelp API Key
         HttpHeaders headers = new HttpHeaders();
-        headers.setBearerAuth(API_KEY);
+
+        headers.setBearerAuth(System.getenv("YELP_API_KEY"));
 
         // Request body
         this.entity = new HttpEntity<>("body", headers);
@@ -43,6 +40,7 @@ public class RestaurantService {
 
     /**
      * This method will return a List of Restaurant Object according to the default search
+     * This method will be used to get the default restaurants for a user | Is use for the home page
      * {@link #getAllRestaurants(String, int, String, int)}
      * @return Restaurant
      *
@@ -77,6 +75,7 @@ public class RestaurantService {
 
         return restaurantDetails;
     }
+
 
     /**
      * This method will return a Reviews Object according to the restaurant id
