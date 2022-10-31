@@ -1,14 +1,19 @@
 package com.api.ufood.model.restaurant;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.NoArgsConstructor;
+import org.springframework.lang.Nullable;
 
 import java.util.List;
 
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
@@ -41,14 +46,8 @@ public class Restaurant {
     @JsonProperty("display_phone")
     private String displayPhone;
 
-    @JsonProperty("review_count")
-    private int reviewCount;
-
     @JsonProperty("categories")
     private List<Category> categories;
-
-    @JsonProperty("rating")
-    private double rating;
 
     @JsonProperty("location")
     private Location location;
@@ -65,8 +64,9 @@ public class Restaurant {
     @JsonProperty("transactions")
     private List<String> transactions;
 
+    @Nullable
     @JsonProperty("special_hours")
-    private List<SpecialHour> specialHours;
+    private List<SpecialHour> specialHours = null;
 
     @JsonProperty("is_closed")
     private boolean isClosed;
@@ -74,6 +74,13 @@ public class Restaurant {
     @JsonProperty("coordinates")
     private Coordinates coordinates;
 
+    @JsonProperty("review_count")
+    private int reviewCount;
+
+    @JsonProperty("rating")
+    private double rating;
+
+    @Nullable
     @JsonProperty("review")
     private Reviews review = null;
 }

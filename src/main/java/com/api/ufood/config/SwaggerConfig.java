@@ -14,10 +14,10 @@ import springfox.documentation.spring.web.plugins.Docket;
 /**
  * SwaggerUI Configuration
  * To access the api documentation go here:
- * <a href="http://localhost:8080/v2/api-docs"/>
+ * <a href="http://localhost:8080/api/v1/v2/api-docs"/>
  *
  * To access the api documentation with a UI go here:
- * <a href="http://localhost:8080/swagger-ui/index.html"/>
+ * <a href="http://localhost:8080/api/v1//swagger-ui/index.html"/>
  */
 @Configuration
 @EnableWebMvc
