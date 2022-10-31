@@ -1,6 +1,5 @@
 package com.api.ufood.service;
 
-import com.api.ufood.config.YelpPropertiesConfig;
 import com.api.ufood.model.restaurant.Businesses;
 import com.api.ufood.model.restaurant.Restaurant;
 import com.api.ufood.model.restaurant.Reviews;
