@@ -39,9 +39,9 @@ Project created using Javascript, Java, SpringBoot, and create-react-app. This a
   - `client`: contains frontend code 
     - `public`: contain all the statics files such as the website favicon and the main html file of the website
     - `src`: contains all the frontend code
-      - `components`: contains the component files
+      - `components`: contains all the components of the app. The components will be organized as follow.
+          - `component-folder`: contains all the files that are uniquely used by the component including other components. Components will be nested if they are only used by one component.
       - `assets`: contains all the assets of the project
-      - `styles`: contains all the styles such as CSS
     - `__tests__`: contains all the test for each component and functions
   
   - `src`: contains all the backend code
