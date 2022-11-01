@@ -1,11 +1,11 @@
 package com.api.ufood.service;
 
+import com.api.ufood.config.YelpPropertiesConfig;
 import com.api.ufood.model.restaurant.Businesses;
 import com.api.ufood.model.restaurant.Restaurant;
 import com.api.ufood.model.restaurant.Reviews;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import org.springframework.http.HttpEntity;
@@ -16,8 +16,8 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class RestaurantService {
 
-    @Value("${yelp.host-url}")
-    private String hostUrl;
+    @Autowired
+    private YelpPropertiesConfig yelpPropertiesConfig;
 
     @Autowired
     private HttpEntity<String> entity;
@@ -39,7 +39,7 @@ public class RestaurantService {
      */
     public Businesses searchRestaurants(String location, int limit, String sortBy, int radius) {
         return restTemplate.exchange(
-                hostUrl +
+                yelpPropertiesConfig.getHostUrl() +
                 "search?location=" + location +
                 "&term=restaurants" +
                 "&limit=" + limit +
@@ -59,7 +59,7 @@ public class RestaurantService {
 
         // Get restaurant details
         Restaurant restaurantDetails = restTemplate.exchange(
-                hostUrl + id,
+                yelpPropertiesConfig.getHostUrl() + id,
                 HttpMethod.GET, entity, Restaurant.class).getBody();
 
         // Get Restaurant reviews
@@ -75,6 +75,6 @@ public class RestaurantService {
      * @return Restaurant
      */
     public Reviews getReviews(String id) { return restTemplate.exchange(
-            hostUrl + id + "/reviews",
+            yelpPropertiesConfig.getHostUrl() + id + "/reviews",
             HttpMethod.GET, entity, Reviews.class).getBody(); }
 }
