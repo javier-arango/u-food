@@ -1,10 +1,13 @@
+// CSS File
 import "./App.css";
+
+// Components
+import Authentication from "../Authentication/Authentication";
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome Team</h1>
-    </div>
+    <Authentication />
   );
 }
 
