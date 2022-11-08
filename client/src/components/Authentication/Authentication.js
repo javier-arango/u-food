@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 // CSS File
 import "./Authentication.css";
 
@@ -13,11 +13,10 @@ function Authentication() {
 
   return (
     <>
-      <Switch>
-        <Route path="/login" component={Login} />
-        <Route path="/resetPassword" component={ResetPass} />
-        <Route path="/confirmation" component={RegistrationConfirm} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/resetPassword" element={<ResetPass/>} />
+      </Routes>
     </>
   );
 }
