@@ -3,10 +3,38 @@ import React, { useState } from "react";
 // Assets
 import logo from "../../../assets/logo.png";
 
+// Initital State for the form Data
+const initialState = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+};
+
 function Login() {
   const [isSignup, setIsSignup] = useState(true);
+  const [formData, setFormData] = useState(initialState);
 
-  // Helper Functions
+  // Handle the submit of the form when login or signup
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // TODO: Debugging
+    console.log(formData);
+
+    if (isSignup) {
+      // Call Signup function
+    } else {
+      // Call login function
+    }
+  };
+
+  // Handle when a value in the form has been changed
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle the switch between the login and sign up form
   const switchMode = () => {
     setIsSignup((prevIsSignup) => !prevIsSignup);
   };
@@ -22,25 +50,41 @@ function Login() {
             with
           </h1>
           <img className="logo" src={logo} alt="UFood logo" />
-          <form id="auth-form">
+          <form id="auth-form" onSubmit={handleSubmit}>
             {isSignup && (
               <>
-                <input type="text" name="fname" placeholder="First Name" />
-                <input type="text" name="lname" placeholder="Last Name" />
+                <input
+                  type="text"
+                  name="firstName"
+                  placeholder="First Name"
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  name="lastName"
+                  placeholder="Last Name"
+                  onChange={handleChange}
+                />
               </>
             )}
             <input type="email" name="email" placeholder="Email" />
-            <input type="password" name="password" placeholder="Password" />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              onChange={handleChange}
+            />
             <input
               type="submit"
               name="submit"
               value={isSignup ? "Sign Up" : "Login"}
+              onChange={handleChange}
             />
           </form>
 
           {!isSignup && (
             <>
-              <a id="fg-pass" href="#">
+              <a id="fg-pass" href="/resetPassword">
                 Forgot password?
               </a>
             </>
