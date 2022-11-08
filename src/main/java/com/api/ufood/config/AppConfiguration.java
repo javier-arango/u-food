@@ -1,6 +1,5 @@
 package com.api.ufood.config;
 
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import org.springframework.context.annotation.Bean;
