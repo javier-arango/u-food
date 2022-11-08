@@ -6,7 +6,7 @@ import "./Authentication.css";
 // Components
 import Login from "./Login/Login";
 import ResetPass from "./ResetPass/ResetPass";
-import RegistrationConfirm from "./RegistrationConfirm/RegistrationConfirm";
+import Confirmation from "./Confirmation/Confirmation";
 
 function Authentication() {
   const [loggedIn, setLoggedin] = useState(false);
