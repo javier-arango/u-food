@@ -1,18 +1,20 @@
-import React, { useState } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 // CSS File
 import "./App.css";
 
 // Components
 import Authentication from "../Authentication/Authentication";
+import Home from "../Home/Home";
 
 function App() {
-  const [loggedIn, setLoggedin] = useState(true);
-
   return (
-    <Switch>
-      <Route path="/" component={Authentication} />
-    </Switch>
+    <>
+      <Routes>
+        <Route path="*" element={<Authentication />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </>
   );
 }
 
