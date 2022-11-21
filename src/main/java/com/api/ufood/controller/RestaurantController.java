@@ -5,8 +5,8 @@ import com.api.ufood.model.restaurant.Restaurant;
 import com.api.ufood.model.restaurant.Reviews;
 import com.api.ufood.service.RestaurantService;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,7 +47,6 @@ public class RestaurantController {
         // Make HTTP request to the Yelp API
         return restaurantService.getRestaurant(id);
     }
-
 
     @GetMapping("{id}/reviews")
     @ApiOperation(
