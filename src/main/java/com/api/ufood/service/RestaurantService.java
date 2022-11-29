@@ -5,6 +5,7 @@ import com.api.ufood.model.restaurant.Businesses;
 import com.api.ufood.model.restaurant.Restaurant;
 import com.api.ufood.model.restaurant.Reviews;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,9 @@ public class RestaurantService {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private ModelMapper modelMapper;
 
 
     /**
