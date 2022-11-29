@@ -35,6 +35,13 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private Collection<Role> roles;
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "savedRestaurants",
+            joinColumns = {@JoinColumn(name = "saved_id")},
+            inverseJoinColumns = {@JoinColumn(name = "rest_id")})
+    private Collection<SavedRestaurant> savedRestaurants;
+
+
 
     public String getFullName() {
         return firstName != null ? firstName.concat(" ").concat(lastName) : "";
