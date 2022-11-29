@@ -34,12 +34,7 @@ public class User {
             joinColumns = {@JoinColumn(name = "user_id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private Collection<Role> roles;
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "savedRestaurants",
-            joinColumns = {@JoinColumn(name = "saved_id")},
-            inverseJoinColumns = {@JoinColumn(name = "rest_id")})
-    private Collection<SavedRestaurant> savedRestaurants;
+    
 
 
 
