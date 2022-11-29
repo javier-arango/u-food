@@ -31,6 +31,7 @@ function Login() {
 
   // Handle when a value in the form has been changed
   const handleChange = (e) => {
+    
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
