@@ -3,12 +3,13 @@ package com.api.ufood.security;
 import com.api.ufood.dto.model.user.RoleDto;
 import com.api.ufood.dto.model.user.UserDto;
 import com.api.ufood.service.UserService;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException
-        ;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
