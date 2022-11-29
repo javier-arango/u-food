@@ -8,9 +8,6 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
-import java.util.Collection;
-
-
 @Getter
 @Setter
 @Accessors(chain = true)
@@ -18,16 +15,7 @@ import java.util.Collection;
 @ToString
 @JsonInclude(value = JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserDto {
-    private String email;
-    private String password;
-    private String firstName;
-    private String lastName;
-    private boolean isAdmin;
-    private Collection<RoleDto> roles;
-    private Collection<SavedRestaurantDto> savedRest;
 
-    public String getFullName() {
-        return firstName != null ? firstName.concat(" ").concat(lastName) : "";
-    }
+public class SavedRestaurantDto {
+    private String saveRest;
 }
