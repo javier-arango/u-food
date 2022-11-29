@@ -35,7 +35,6 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private Collection<Role> roles;
     
-
     public String getFullName() {
         return firstName != null ? firstName.concat(" ").concat(lastName) : "";
     }
