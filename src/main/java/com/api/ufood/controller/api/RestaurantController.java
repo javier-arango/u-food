@@ -1,12 +1,13 @@
-package com.api.ufood.controller;
+package com.api.ufood.controller.api;
 
 import com.api.ufood.model.restaurant.Businesses;
 import com.api.ufood.model.restaurant.Restaurant;
 import com.api.ufood.model.restaurant.Reviews;
 import com.api.ufood.service.RestaurantService;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/restaurants")
+@Api(description = "Operations pertaining to restaurant details in the UFood application")
 public class RestaurantController {
 
     @Autowired
@@ -47,7 +49,6 @@ public class RestaurantController {
         // Make HTTP request to the Yelp API
         return restaurantService.getRestaurant(id);
     }
-
 
     @GetMapping("{id}/reviews")
     @ApiOperation(

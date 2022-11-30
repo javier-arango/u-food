@@ -21,7 +21,11 @@ repositories {
 dependencies {
 	implementation 			'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 			'org.springframework.boot:spring-boot-starter-web'
+	implementation 			'org.springframework.boot:spring-boot-starter-mail:2.7.5'  // Mail service
+	implementation 			'org.springframework.boot:spring-boot-starter-security'
+	implementation          'org.springframework.boot:spring-boot-starter-validation:2.7.5'  // Validation library
 	implementation 			'io.springfox:springfox-boot-starter:3.0.0'
+	implementation 			'org.modelmapper:modelmapper:3.1.0'
 	compileOnly 			'org.projectlombok:lombok'
 	runtimeOnly 			'com.h2database:h2'
 	annotationProcessor 	'org.projectlombok:lombok'
