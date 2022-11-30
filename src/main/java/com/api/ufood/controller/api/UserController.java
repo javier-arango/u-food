@@ -6,13 +6,16 @@ import com.api.ufood.controller.request.UserSignupRequest;
 import com.api.ufood.dto.model.user.UserDto;
 import com.api.ufood.dto.response.Response;
 import com.api.ufood.model.restaurant.Restaurant;
+import com.api.ufood.security.email.EmailSenderService;
 import com.api.ufood.service.UserService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 
@@ -30,7 +33,7 @@ public class UserController {
             notes = "Provide the person data to create a new user in the database",
             response = Response.class
     )
-    public Response signup(@RequestBody @Valid UserSignupRequest userSignupRequest) {
+    public Response signup(@RequestBody @Valid UserSignupRequest userSignupRequest, HttpServletRequest request) {
         UserDto userDto = new UserDto()
                 .setEmail(userSignupRequest.getEmail())
                 .setPassword(userSignupRequest.getPassword())
@@ -38,7 +41,24 @@ public class UserController {
                 .setLastName(userSignupRequest.getLastName())
                 .setAdmin(false);
 
+//        String baseUrl = ServletUriComponentsBuilder.fromRequestUri(request)
+//                .replacePath(null)
+//                .build()
+//                .toUriString();
+//
+//        System.out.println(baseUrl);
+
         return Response.ok().setPayload(userService.signup(userDto));
+    }
+
+    @GetMapping("/signup/confirmation")
+    @ApiOperation(
+            value= "Confirm user email using a unique token",
+            notes = "Provide a confirmation token, so the email can be confirm in the database",
+            response = String.class
+    )
+    public String confirmEmail(@RequestParam("confirmation_token") String token) {
+        return userService.confirmEmail(token);
     }
 
     @GetMapping("{email}")

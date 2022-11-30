@@ -24,6 +24,7 @@ public class UserDto {
     private String firstName;
     private String lastName;
     private boolean isAdmin;
+    private boolean isEnabled;
     private Collection<RoleDto> roles;
     private Collection<SavedRestaurantDto> savedRest;
 

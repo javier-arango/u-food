@@ -1,5 +1,5 @@
 package com.api.ufood.security.email;
 
 public interface EmailSender {
-    void send(String to, String email);
+    void send(String emailTo, String personName, String confirmationLink);
 }
