@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 // Assets
-import logo from "../../../assets/logo.png"
-import {verifyPassword} from "../../../utils/utils";
+import logo from "../../../assets/logo.png";
+import bannerImage from "../../../assets/login_banner.png";
 
 // Initital State for the form Data
 const initialState = {
@@ -10,6 +10,7 @@ const initialState = {
   lastName: "",
   email: "",
   password: "",
+  verifyPassword: "",
 };
 
 function Login() {
@@ -48,7 +49,10 @@ function Login() {
   return (
     <>
       <div className="container">
-        <div id="banner"></div>
+        <div
+          id="banner"
+          style={{ backgroundImage: `url(${bannerImage})` }}
+        ></div>
         <div className="sub-container">
           <h1 id="login-slogan">
             Discover <br />
@@ -78,6 +82,12 @@ function Login() {
               type="password"
               name="password"
               placeholder="Password"
+              onChange={handleChange}
+            />
+            <input
+              type="password"
+              name="verifyPassword"
+              placeholder="Enter Password again"
               onChange={handleChange}
             />
             <input
