@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 // Assets
 import logo from "../../../assets/logo.png"
+import {verifyPassword} from "../../../utils/utils";
 
 // Initital State for the form Data
 const initialState = {
@@ -24,6 +25,9 @@ function Login() {
 
     if (isSignup) {
       // Call Signup function
+      if(verifyPassword(formData.password, formData.verifyPassword)) {
+
+      }
     } else {
       // Call login function
     }
