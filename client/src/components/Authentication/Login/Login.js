@@ -10,6 +10,7 @@ const initialState = {
   lastName: "",
   email: "",
   password: "",
+  verifyPassword: "",
 };
 
 function Login() {
@@ -77,6 +78,12 @@ function Login() {
               type="password"
               name="password"
               placeholder="Password"
+              onChange={handleChange}
+            />
+            <input
+              type="password"
+              name="verifyPassword"
+              placeholder="Enter Password again"
               onChange={handleChange}
             />
             <input
