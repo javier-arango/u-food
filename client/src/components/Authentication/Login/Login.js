@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // Assets
-import logo from "../../../assets/logo.png";
+import logo from "../../../assets/logo.png"
 
 // Initital State for the form Data
 const initialState = {
@@ -28,6 +28,7 @@ function Login() {
       // Call login function
     }
   };
+
 
   // Handle when a value in the form has been changed
   const handleChange = (e) => {
