@@ -1,5 +1,12 @@
 # UFood
+
+Find the best location to eat around campus
+
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/javier-arango/u-food/tree/main.svg?style=svg&circle-token=a171409f2e916d7bb610608209b330ec8fa842bf)](https://dl.circleci.com/status-badge/redirect/gh/javier-arango/u-food/tree/main)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=javier-arango_u-food&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=javier-arango_u-food)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=javier-arango_u-food&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=javier-arango_u-food)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=javier-arango_u-food&metric=bugs)](https://sonarcloud.io/summary/new_code?id=javier-arango_u-food)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=javier-arango_u-food&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=javier-arango_u-food)
 
 For students at the University of Florida who need to find food services close to them, the UFood is a website that shows students food options in their budget as well as their proximity. Unlike other sites, our product is catered toward UF students and will have a pleasant user experience free for all.
 
@@ -55,7 +62,7 @@ Project created using Javascript, Java, SpringBoot, and create-react-app. This a
             - `java/com/api/developer/ufood`: contains the main code for testing (Please call a test file like this NameHere.Test.java
 
 ## API Documentation
-Run the backend server in go to [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+Run the backend server in go to [http://localhost:8080/api/v1/swagger-ui/index.html](http://localhost:8080/api/v1/swagger-ui/index.html)
 
 ## Getting Started
 To run this project you will need Java, Gradle, and npm install in your system:
