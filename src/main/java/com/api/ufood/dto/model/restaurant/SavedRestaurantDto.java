@@ -1,4 +1,4 @@
-package com.api.ufood.dto.model.user;
+package com.api.ufood.dto.model.restaurant;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;

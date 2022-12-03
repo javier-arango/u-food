@@ -31,9 +31,8 @@ public class WebSecurityConfig {
 
         return http
                 .csrf(AbstractHttpConfigurer::disable)
-//                .antMatcher("/api/**")
                 .authorizeRequests(auth -> auth
-                        .antMatchers("/api/v1/user/signup/**").permitAll()
+                        .antMatchers("/api/v1/user/auth/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .headers(headers -> headers.frameOptions().sameOrigin()) // Allow h2-console
@@ -48,7 +47,8 @@ public class WebSecurityConfig {
                 "/resources/**", "/static/**", "/css/**", "/js/**", "/images/**",
                 "/resources/static/**", "/css/**", "/js/**", "/img/**", "/fonts/**",
                 "/images/**", "/scss/**", "/vendor/**", "/favicon.ico", "/auth/**", "/favicon.png",
-                "/v1/api-docs", "/webjars/**", "/swagger-resources/**", "/actuator", "/swagger-ui/**",
+                "/v1/api-docs", "/configuration/ui", "/configuration/security",
+                "/webjars/**", "/swagger-resources/**", "/actuator", "/swagger-ui/**",
                 "/actuator/**", "/swagger-ui/index.html", "/swagger-ui/", "/h2-console/", "/h2-console/**"
         );
     }

@@ -1,5 +1,6 @@
 package com.api.ufood.dto.model.user;
 
+import com.api.ufood.dto.model.restaurant.SavedRestaurantDto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
