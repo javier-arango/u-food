@@ -20,6 +20,4 @@ public class SavedRestaurant {
 
     @Column(name = "rest_id")
     private String restaurant_id;
-
-
 }
