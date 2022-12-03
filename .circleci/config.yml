@@ -45,8 +45,3 @@ jobs:
       - run:
           name: Run tests
           command: gradle test
-
-      # Run static code analysis with SonarCloud
-      - run:
-          name: Analyze on SonarCloud
-          command: gradle build sonarqube
