@@ -67,8 +67,8 @@ function Home() {
         </nav>
 
         <Routes>
-          <Route path="/hello" element={<HomeContent />} />
-          <Route path="/" element={<Profile />} />
+          <Route path="/" element={<HomeContent />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
     </>
