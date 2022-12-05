@@ -164,13 +164,13 @@
 
 h1 {
   color: black;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
 }
 
 #profile-info h2 {
   color: black;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   text-align: left;
   width: 100%;
@@ -179,7 +179,7 @@ h1 {
 
 #profile-info h3 {
   color: blue;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: lighter;
   text-align: left;
   width: 100%;

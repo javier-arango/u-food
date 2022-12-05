@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 
 // Components
 import HomeContent from "./HomeContent/HomeContent";
 import Profile from "./Profile/Profile";
+
 // CSS File
 import "./Home.css";
 
@@ -12,6 +13,7 @@ import "./Home.css";
 import logo from "../../assets/logo.png";
 import bookmarksIcon from "../../assets/bookmark.svg";
 import profileIcon from "../../assets/person.svg";
+import Favorites from "./Favorites/Favorites";
 
 // template data
 const restaurantsData = [
@@ -59,16 +61,22 @@ function Home() {
     <>
       <div className="home-container">
         <nav id="mobile-nav">
-          <img id="logo" src={logo} />
+          <Link to={`/home`}>
+            <img id="logo" src={logo} />
+          </Link>
           <div id="nav-items">
-            <img src={bookmarksIcon} />
-            <img src={profileIcon} />
+            <Link to={`favorites`}>
+              <img src={bookmarksIcon} />
+            </Link>
+            <Link to={`profile`}>
+              <img src={profileIcon} />
+            </Link>
           </div>
         </nav>
-
         <Routes>
           <Route path="/" element={<HomeContent />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/favorites" element={<Favorites />} />
         </Routes>
       </div>
     </>
