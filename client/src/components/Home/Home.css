@@ -1,151 +1,151 @@
-.container {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+.home-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-      #mobile-nav {
-        width: 100%;
-        height: 50px;
-        background-color: rgb(59, 59, 59);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+#mobile-nav {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(59, 59, 59);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-      #logo {
-        width: 100px;
-      }
+#logo {
+  width: 100px;
+}
 
-      #search-btn {
-        width: 90%;
-        height: 40px;
-        font-weight: bold;
-        margin-top: 15px;
-        border-radius: 20px;
-        border: none;
-      }
+#search-btn {
+  width: 90%;
+  height: 40px;
+  font-weight: bold;
+  margin-top: 15px;
+  border-radius: 20px;
+  border: none;
+}
 
-      #content {
-        width: 100%;
-        height: 100%;
-        margin-top: 20px;
-        overflow-y: scroll;
-      }
+#content {
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  overflow-y: scroll;
+}
 
-      .restaurant-section {
-        width: 100%;
-        height: auto;
-        padding: 20px 0px 20px 20px;
-        margin-top: 10px;
-      }
+.restaurant-section {
+  width: 100%;
+  height: auto;
+  padding: 20px 0px 20px 20px;
+  margin-top: 10px;
+}
 
-      .restaurants-ctn {
-        width: 100%;
-        height: auto;
-        margin-top: 10px;
-        overflow-x: scroll;
-      }
+.restaurants-ctn {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  overflow-x: scroll;
+}
 
-      .restaurants {
-        width: auto;
-        height: 230px;
-        display: inline-flex;
-        overflow-x: scroll;
-        overflow-y: hidden;
-      }
+.restaurants {
+  width: auto;
+  height: 230px;
+  display: inline-flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
 
-      .restaurant {
-        width: 160px;
-        height: 230px;
-        margin-right: 20px;
-        margin-bottom: 20px;
-        background-color: white;
-      }
+.restaurant {
+  width: 160px;
+  height: 230px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+}
 
-      .img-ctn {
-        width: 100%;
-        height: 160px;
-        background-image: url();
-        background-size: cover;
-        display: flex;
-        justify-content: flex-end;
-      }
+.img-ctn {
+  width: 100%;
+  height: 160px;
+  background-image: url();
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+}
 
-      .icon-ctn {
-        width: 30px;
-        height: 30px;
-        background-color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+.icon-ctn {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-      .favorite-icon {
-        width: 20px;
-      }
+.favorite-icon {
+  width: 20px;
+}
 
-      .rst-name {
-        margin-top: 5px;
-      }
+.rst-name {
+  margin-top: 5px;
+}
 
-      .info {
-        width: 100%;
-        height: 100%;
-        display: flex;
-      }
+.info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
 
-      .info .address {
-        width: 50%;
-        margin-top: 5px;
-        font-size: 10px;
-      }
+.info .address {
+  width: 50%;
+  margin-top: 5px;
+  font-size: 10px;
+}
 
-      .review-info {
-        width: 50%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-      }
+.review-info {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 
-      .review-info .tag {
-        font-size: 10px;
-        background-color: aquamarine;
-        padding: 2px 10px;
-        border-radius: 60px;
-      }
+.review-info .tag {
+  font-size: 10px;
+  background-color: aquamarine;
+  padding: 2px 10px;
+  border-radius: 60px;
+}
 
-      .stars,
-      .reviews-ctn {
-        font-weight: bold;
-        font-size: 10px;
-      }
+.stars,
+.reviews-ctn {
+  font-weight: bold;
+  font-size: 10px;
+}
 
-      /* ------- Animations -------- */
+/* ------- Animations -------- */
 
-      /* ------- Responsive Css --------- */
-      /* // X-Small devices (portrait phones, less than 576px)
+/* ------- Responsive Css --------- */
+/* // X-Small devices (portrait phones, less than 576px)
       // No media query for `xs` since this is the default in Bootstrap */
 
-      /* // Small devices (landscape phones, 576px and up) */
-      @media (min-width: 576px) {
-      }
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
 
-      /* // Medium devices (tablets, 768px and up) */
-      @media (min-width: 768px) {
-      }
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
 
-      /* // Large devices (desktops, 992px and up) */
-      @media (min-width: 992px) {
-      }
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
 
-      /* // X-Large devices (large desktops, 1200px and up) */
-      @media (min-width: 1200px) {
-      }
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
 
-      /* // XX-Large devices (larger desktops, 1400px and up) */
-      @media (min-width: 1400px) {
-      }
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}

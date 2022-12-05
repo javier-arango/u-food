@@ -54,7 +54,7 @@ function Home() {
   const [sections, setSections] = useState(sectionsData);
   return (
     <>
-      <div className="container">
+      <div className="home-container">
         <nav id="mobile-nav">
           <img id="logo" src={logo} />
         </nav>
