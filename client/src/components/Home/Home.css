@@ -9,10 +9,27 @@
 #mobile-nav {
   width: 100%;
   height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
   background-color: rgb(59, 59, 59);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+}
+
+#nav-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+}
+
+#nav-items img {
+  width: 30px;
 }
 
 #logo {
@@ -122,6 +139,79 @@
 .reviews-ctn {
   font-weight: bold;
   font-size: 10px;
+}
+
+/* -------- Profile Component CSS ---------- */
+.profile-container {
+  width: 100%;
+  height: 100vh;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#profile-info {
+  width: 100%;
+  height: 300px;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+  color: black;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#profile-info h2 {
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: left;
+  width: 100%;
+  text-decoration: underline;
+}
+
+#profile-info h3 {
+  color: blue;
+  font-size: 20px;
+  font-weight: lighter;
+  text-align: left;
+  width: 100%;
+}
+
+#profile-actions {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#prof-edit-btn {
+  width: 85%;
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border: 2px solid rgba(149, 157, 165, 0.2);
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+#prof-delete-btn {
+  width: 85%;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border: 2px solid rgba(149, 157, 165, 0.2);
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 /* ------- Animations -------- */

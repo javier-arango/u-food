@@ -1,17 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
 
 // Components
-import HomeContent from "./HomeContent/HomeContent";
-import Profile from "./Profile/Profile";
-// CSS File
-import "./Home.css";
-
-// Assets
-import logo from "../../assets/logo.png";
-import bookmarksIcon from "../../assets/bookmark.svg";
-import profileIcon from "../../assets/person.svg";
+import RestaurantSection from "../../RestaurantSection/RestaurantSection";
 
 // template data
 const restaurantsData = [
@@ -53,26 +44,19 @@ const sectionsData = [
   },
 ];
 
-function Home() {
+function HomeContent() {
   const [sections, setSections] = useState(sectionsData);
   return (
     <>
-      <div className="home-container">
-        <nav id="mobile-nav">
-          <img id="logo" src={logo} />
-          <div id="nav-items">
-            <img src={bookmarksIcon} />
-            <img src={profileIcon} />
-          </div>
-        </nav>
+        <button id="search-btn">Search for Restaurants</button>
 
-        <Routes>
-          <Route path="/hello" element={<HomeContent />} />
-          <Route path="/" element={<Profile />} />
-        </Routes>
-      </div>
+        <div id="content">
+          {sections.map((section) => {
+            return <RestaurantSection section={section} />;
+          })}
+        </div>
     </>
   );
 }
 
-export default Home;
+export default HomeContent;
