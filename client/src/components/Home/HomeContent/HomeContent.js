@@ -52,7 +52,7 @@ function HomeContent() {
 
         <div id="content">
           {sections.map((section) => {
-            return <RestaurantSection section={section} />;
+            return <RestaurantSection section={section} scroll="horizontal"/>;
           })}
         </div>
     </>

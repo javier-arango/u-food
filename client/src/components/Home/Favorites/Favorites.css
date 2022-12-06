@@ -1,11 +1,11 @@
-.restaurants-ctn {
+.restaurants-ctn-vertical {
   width: 100%;
   height: auto;
   margin-top: 10px;
   overflow-y: scroll;
 }
 
-.restaurants {
+.restaurants-vertical {
   width: 100%;
   height: 100%;
   display: flex;

@@ -59,14 +59,14 @@
   margin-top: 10px;
 }
 
-.restaurants-ctn {
+.restaurants-ctn-horizontal {
   width: 100%;
   height: auto;
   margin-top: 10px;
   overflow-x: scroll;
 }
 
-.restaurants {
+.restaurants-horizontal {
   width: auto;
   height: 230px;
   display: inline-flex;
