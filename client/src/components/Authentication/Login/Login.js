@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Assets
 import logo from "../../../assets/logo.png";
@@ -18,6 +19,7 @@ const initialState = {
 };
 
 function Login() {
+  const navigate = useNavigate();
   const [isSignup, setIsSignup] = useState(true);
   const [formData, setFormData] = useState(initialState);
 
@@ -38,6 +40,9 @@ function Login() {
 
     // TODO: Debugging
     console.log(formData);
+
+    // TODO: DEbugging
+    navigate("/home");
 
     if (isSignup) {
       // Call Signup function if passwords match
