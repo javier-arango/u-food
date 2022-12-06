@@ -3,7 +3,6 @@ package com.api.ufood.security.filter;
 import com.api.ufood.security.SecurityConstants;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.core.Authentication;
@@ -67,12 +66,13 @@ public class JWTGenerator {
         }
     }
 
-    private KeyPair generateSigintKeyPair() throws NoSuchAlgorithmException {
-        KeyPairGenerator keyGenerator = KeyPairGenerator.getInstance("RSA");
-        keyGenerator.initialize(2048);
-
-        return keyGenerator.generateKeyPair();
-    }
+    // TODO: Generate a pair of keys (private, public)
+//    private KeyPair generateSigintKeyPair() throws NoSuchAlgorithmException {
+//        KeyPairGenerator keyGenerator = KeyPairGenerator.getInstance("RSA");
+//        keyGenerator.initialize(2048);
+//
+//        return keyGenerator.generateKeyPair();
+//    }
 
     private Key getSigningKey() {
         byte[] keyBytes = java.util.Base64.getDecoder().decode(SecurityConstants.JWT_SECRET);
