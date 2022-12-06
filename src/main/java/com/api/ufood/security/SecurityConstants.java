@@ -1,8 +1,9 @@
 package com.api.ufood.security;
 
-public class SecurityConstants {
-    public static final long JWT_EXPIRATION = 86400;
+import org.springframework.beans.factory.annotation.Value;
 
-    // Other people can't see this in production
-    public static final String JWT_SECRET = "this_is_my_secret_key_that_can_not_be_taken";
+public interface SecurityConstants {
+    long JWT_EXPIRATION = 864_000_000; // 10 days
+    String TOKEN_PREFIX = "Bearer ";
+    String JWT_SECRET = "SecretKeyToGenJWTsasdfghvbnjklhgvfghvgybhjkn";
 }
