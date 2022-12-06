@@ -14,6 +14,7 @@ import logo from "../../assets/logo.png";
 import bookmarksIcon from "../../assets/bookmark.svg";
 import profileIcon from "../../assets/person.svg";
 import Favorites from "./Favorites/Favorites";
+import * as api from "../../api";
 
 // template data
 const restaurantsData = [
@@ -57,6 +58,19 @@ const sectionsData = [
 
 function Home() {
   const [sections, setSections] = useState(sectionsData);
+
+  //get restaurant data
+  const getRestData = async () => {
+    const {data} = await api.restData()
+    return data
+  }
+
+  //post data of restaurant to save
+  const getSave = async (id) => {
+    const {data} = await api.save(id)
+    return data
+  }
+
   return (
     <>
       <div className="home-container">

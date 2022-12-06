@@ -23,11 +23,13 @@ function Login() {
   const [isSignup, setIsSignup] = useState(true);
   const [formData, setFormData] = useState(initialState);
 
+  //gets data for signup
   const signUpFunc = async (formData) => {
     const {data} = await api.signup(formData)
     return data
   }
 
+  //data for login
   const loginFunc = async (formData) => {
     const {data} = await api.login(formData)
     return data
