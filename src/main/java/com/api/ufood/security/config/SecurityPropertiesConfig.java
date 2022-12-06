@@ -13,4 +13,5 @@ import org.springframework.context.annotation.PropertySource;
 @ConfigurationProperties("ufood-security")
 public class SecurityPropertiesConfig {
     private int tokenExpirationTime;
+    private String tokenSecret;
 }
