@@ -45,12 +45,14 @@
             width: 100px;
         }
 
-        a {
-            font-weight: lighter;
-            padding-top: 5px;
-            text-align: left;
-            padding-left: 20px;
-            width: 100%;
+        input[type=text] {
+            width: 85%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 2px solid rgba(149, 157, 165, 0.2);
+            border-radius: 10px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         }
 
         h1 {
@@ -66,18 +68,7 @@
             font-weight: bold;
             padding-top: 40px;
             text-align: left;
-            padding-left: 20px;
-            width: 100%;
-            text-decoration: underline;
-        }
-
-        h3 {
-            color: blue;
-            font-size: 100%;
-            font-weight: lighter;
-            padding-top: 5px;
-            text-align: left;
-            padding-left: 20px;
+            padding-left: 60px;
             width: 100%;
         }
 
@@ -136,38 +127,29 @@
         <img id="logo" src="logo.png" />
     </nav>
     <h1>
-        Profile Information
+        Edit Profile
     </h1>
     <h2>
         First Name
     </h2>
-    <h3>
-        Michael
-    </h3>
+    </br>
+    <input type = "text" placeholder="name" name="name">
     <h2>
         Last Name
     </h2>
-    <h3>
-        Jordan
-    </h3>
+    </br>
+    <input type = "text" placeholder="Last" name="last">
     <h2>
         Email
     </h2>
-    <h3>
-        mjbasketball@gmail.com
-    </h3>
-    <h2>
-        Password
-    </h2>
-    <a href="https://www.w3schools.com/">change password</a>
+    </br>
+    <input type = "text" placeholder="email" name="email">
     </br>
     </br>
     </br>
+    <button id="edit-btn">Save Changes</button>
     </br>
-    </br>
-    <button id="edit-btn">Edit Profile</button>
-    </br>
-    <button id="delete-btn">Delete Account</button>
+    <button id="delete-btn">Delete Changes</button>
 </div>
 </body>
 </html>
