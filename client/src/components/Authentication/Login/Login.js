@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Assets
 import logo from "../../../assets/logo.png";
@@ -18,14 +19,17 @@ const initialState = {
 };
 
 function Login() {
+  const navigate = useNavigate();
   const [isSignup, setIsSignup] = useState(true);
   const [formData, setFormData] = useState(initialState);
 
+  //gets data for signup
   const signUpFunc = async (formData) => {
     const {data} = await api.signup(formData)
     return data
   }
 
+  //data for login
   const loginFunc = async (formData) => {
     const {data} = await api.login(formData)
     return data
@@ -36,6 +40,9 @@ function Login() {
 
     // TODO: Debugging
     console.log(formData);
+
+    // TODO: DEbugging
+    navigate("/home");
 
     if (isSignup) {
       // Call Signup function if passwords match

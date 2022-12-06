@@ -1,5 +1,6 @@
 package com.api.ufood.dto.model.user;
 
+import com.api.ufood.dto.model.restaurant.SavedRestaurantDto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
@@ -24,6 +25,7 @@ public class UserDto {
     private String firstName;
     private String lastName;
     private boolean isAdmin;
+    private boolean isEnabled;
     private Collection<RoleDto> roles;
     private Collection<SavedRestaurantDto> savedRest;
 

@@ -31,9 +31,8 @@ public class WebSecurityConfig {
 
         return http
                 .csrf(AbstractHttpConfigurer::disable)
-                .antMatcher("/api/**")
                 .authorizeRequests(auth -> auth
-                        .antMatchers("/api/v1/user/signup").permitAll()
+                        .antMatchers("/api/v1/user/auth/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .headers(headers -> headers.frameOptions().sameOrigin()) // Allow h2-console

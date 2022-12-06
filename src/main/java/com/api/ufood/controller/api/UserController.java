@@ -2,7 +2,6 @@ package com.api.ufood.controller.api;
 
 import com.api.ufood.controller.request.UserPasswordRequest;
 import com.api.ufood.controller.request.UserProfileFormRequest;
-import com.api.ufood.controller.request.UserSignupRequest;
 import com.api.ufood.dto.model.user.UserDto;
 import com.api.ufood.dto.response.Response;
 import com.api.ufood.model.restaurant.Restaurant;
@@ -13,8 +12,6 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.validation.Valid;
-
 
 @RestController
 @RequestMapping("/user")
@@ -23,23 +20,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
-    @PostMapping("signup")
-    @ApiOperation(
-            value= "Add a new user to the database",
-            notes = "Provide the person data to create a new user in the database",
-            response = Response.class
-    )
-    public Response signup(@RequestBody @Valid UserSignupRequest userSignupRequest) {
-        UserDto userDto = new UserDto()
-                .setEmail(userSignupRequest.getEmail())
-                .setPassword(userSignupRequest.getPassword())
-                .setFirstName(userSignupRequest.getFirstName())
-                .setLastName(userSignupRequest.getLastName())
-                .setAdmin(false);
-
-        return Response.ok().setPayload(userService.signup(userDto));
-    }
 
     @GetMapping("{email}")
     @ApiOperation(
