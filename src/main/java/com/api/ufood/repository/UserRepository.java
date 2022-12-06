@@ -1,6 +1,6 @@
 package com.api.ufood.repository;
 
-import com.api.ufood.model.user.User;
+import com.api.ufood.model.user.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import org.springframework.data.jpa.repository.Modifying;
@@ -10,12 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional(readOnly = true)
-public interface UserRepository extends JpaRepository<User, Long> {
-    User findByEmail(String email);
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
+    UserEntity findByEmail(String email);
 
     @Transactional
     @Modifying
-    @Query("UPDATE User a " +
+    @Query("UPDATE UserEntity a " +
             "SET a.isEnabled = TRUE WHERE a.email = ?1")
     int enableUser(String email);
 }

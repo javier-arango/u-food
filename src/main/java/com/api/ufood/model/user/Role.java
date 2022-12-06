@@ -22,7 +22,7 @@ public class Role {
     private Long id;
 
     @ManyToMany(mappedBy = "roles")
-    private Collection<User> users;
+    private Collection<UserEntity> users;
 
     @Enumerated(EnumType.STRING)
     private UserRoles role;

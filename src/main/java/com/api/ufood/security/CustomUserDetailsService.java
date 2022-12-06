@@ -2,8 +2,8 @@ package com.api.ufood.security;
 
 import com.api.ufood.dto.model.user.RoleDto;
 import com.api.ufood.dto.model.user.UserDto;
-import com.api.ufood.service.UserService;
 
+import com.api.ufood.service.UserService;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,17 +21,18 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Autowired
     private UserService userService;
 
+
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         UserDto userDto = userService.findUserByEmail(email);
 
-        if (userDto != null) {
+        if (userDto != null && userDto.isEnabled()) {
             List<GrantedAuthority> authorities = getUserAuthority(userDto.getRoles());
 
             return buildUserForAuthentication(userDto, authorities);
-        } else {
-            throw new UsernameNotFoundException("user with email " + email + " does not exist.");
         }
+
+        else throw new UsernameNotFoundException("Email not found or email not confirmed!");
     }
 
     private List<GrantedAuthority> getUserAuthority(Collection<RoleDto> userRoles) {

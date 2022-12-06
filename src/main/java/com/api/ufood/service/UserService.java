@@ -2,7 +2,7 @@ package com.api.ufood.service;
 
 import com.api.ufood.dto.mapper.UserMapper;
 import com.api.ufood.dto.model.user.UserDto;
-import com.api.ufood.model.user.User;
+import com.api.ufood.model.user.UserEntity;
 import com.api.ufood.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class UserService  {
 
 
     public UserDto findUserByEmail(String email) throws UsernameNotFoundException {
-        Optional<User> user = Optional.ofNullable(userRepository.findByEmail(email));
+        Optional<UserEntity> user = Optional.ofNullable(userRepository.findByEmail(email));
 
         if (user.isPresent()) {
             return UserMapper.toUserDto(user.get());
@@ -35,10 +35,10 @@ public class UserService  {
     }
 
     public UserDto updateProfile(UserDto userDto) throws UsernameNotFoundException {
-        Optional<User> oldUser = Optional.ofNullable(userRepository.findByEmail(userDto.getEmail()));
+        Optional<UserEntity> oldUser = Optional.ofNullable(userRepository.findByEmail(userDto.getEmail()));
 
         if (oldUser.isPresent()) {
-            User newUser = oldUser.get();
+            UserEntity newUser = oldUser.get();
 
             newUser.setFirstName(userDto.getFirstName());
             newUser.setLastName(userDto.getLastName());
@@ -50,10 +50,10 @@ public class UserService  {
     }
 
     public UserDto changePassword(UserDto userDto, String newPassword) throws UsernameNotFoundException{
-        Optional<User> currentUser = Optional.ofNullable(userRepository.findByEmail(userDto.getEmail()));
+        Optional<UserEntity> currentUser = Optional.ofNullable(userRepository.findByEmail(userDto.getEmail()));
 
         if (currentUser.isPresent()) {
-            User userModel = currentUser.get();
+            UserEntity userModel = currentUser.get();
 
             userModel.setPassword(bCryptPasswordEncoder.encode(newPassword));
 
@@ -63,11 +63,12 @@ public class UserService  {
         throw new UsernameNotFoundException(String.format("User with email %s not found", userDto.getEmail()));
     }
 
+    // TODO: Fix the error of why a user can't be delete from the database
     public String deleteUser(String email) throws UsernameNotFoundException {
-        Optional<User> currentUser = Optional.ofNullable(userRepository.findByEmail(email));
+        Optional<UserEntity> currentUser = Optional.ofNullable(userRepository.findByEmail(email));
 
         if (currentUser.isPresent()) {
-            User userModel = currentUser.get();
+            UserEntity userModel = currentUser.get();
 
             userRepository.deleteById(userModel.getId());
 

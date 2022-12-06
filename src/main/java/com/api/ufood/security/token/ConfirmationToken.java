@@ -1,6 +1,6 @@
 package com.api.ufood.security.token;
 
-import com.api.ufood.model.user.User;
+import com.api.ufood.model.user.UserEntity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,17 +31,17 @@ public class ConfirmationToken {
 
     private LocalDateTime confirmedAt;
 
-    @ManyToOne
     @JoinColumn(
             nullable = false,
             name = "user_id"
     )
-    private User user;
+    @ManyToOne
+    private UserEntity user;
 
     public ConfirmationToken(String token,
                              LocalDateTime createdAt,
                              LocalDateTime expiresAt,
-                             User appUser)
+                             UserEntity appUser)
     {
         this.token = token;
         this.createdAt = createdAt;

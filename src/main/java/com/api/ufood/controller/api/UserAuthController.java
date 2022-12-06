@@ -1,15 +1,19 @@
 package com.api.ufood.controller.api;
 
+import com.api.ufood.controller.request.UserLoginRequest;
 import com.api.ufood.controller.request.UserSignupRequest;
 import com.api.ufood.dto.model.user.UserDto;
+import com.api.ufood.dto.response.AuthResponse;
 import com.api.ufood.dto.response.Response;
 import com.api.ufood.service.UserAuthService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -27,7 +31,7 @@ public class UserAuthController {
             notes = "Provide the person data to create a new user in the database",
             response = Response.class
     )
-    public Response signup(@RequestBody @Valid UserSignupRequest userSignupRequest) {
+    public ResponseEntity<String> signup(@RequestBody @Valid UserSignupRequest userSignupRequest) {
         UserDto userDto = new UserDto()
                 .setEmail(userSignupRequest.getEmail())
                 .setPassword(userSignupRequest.getPassword())
@@ -35,7 +39,19 @@ public class UserAuthController {
                 .setLastName(userSignupRequest.getLastName())
                 .setAdmin(false);
 
-        return Response.ok().setPayload(userAuthService.signup(userDto));
+        // Signup the user
+        return userAuthService.signup(userDto);
+    }
+
+    @PostMapping("login")
+    @ApiOperation(
+            value= "Login the user into the API",
+            notes = "Provide the email and password user at signup, so it let you login",
+            response = Response.class
+    )
+    public ResponseEntity<AuthResponse> login(@RequestBody @Valid UserLoginRequest userLoginRequest) {
+        // Login the user
+        return userAuthService.login(userLoginRequest);
     }
 
     @GetMapping("/confirmation")

@@ -1,5 +1,6 @@
 package com.api.ufood.model.user;
 
+import com.api.ufood.security.token.ConfirmationToken;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
@@ -12,7 +13,7 @@ import java.util.Collection;
 @Accessors(chain = true)
 @Entity
 @Table(name = "users")
-public class User {
+public class UserEntity {
     @Id
     @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,6 +31,7 @@ public class User {
     private String password;
 
     private Boolean isEnabled = false;
+
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_role",
