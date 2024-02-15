@@ -34,6 +34,9 @@
 - 🚀 [Tech Stack](#tech-stack)
 - 📲 [Application type](#app-type)
 - 📒 [System Architecture](#system-architecture)
+- 🛠 [Configuration and Customization](#configuration-and-customization)
+- 🔐 [Security and Authentication](#security-and-authentication)
+- 📝 [Versioning and CI/CD](#versioning-and-cicd)
 - 🏅 [Project Structure](#project-structure)
 - 👥 [Getting Started](#getting-started)
     - 👨‍💻 [How to run the frontend](#how-to-run-the-frontend)
@@ -83,6 +86,43 @@ Project created using Javascript, Java, SpringBoot, and create-react-app. This a
 
 ## API Documentation
 Run the backend server in go to [http://localhost:8080/api/v1/swagger-ui/index.html](http://localhost:8080/api/v1/swagger-ui/index.html)
+
+### 🛠 Configuration and Customization
+The application architecture of UFood emphasizes adaptability and robust security through strategic configuration and customization:
+
+- **Security Configurations**: UFood incorporates specific security settings to safeguard the platform and its users. Token-based authentication is fortified with a configurable expiration time (`ufood-security.token-expiration-time=15`) and a securely generated token secret (`ufood-security.token-secret`). These settings ensure that session management is both secure and user-friendly.
+
+- **External API Integration**: UFood's diverse dining options are powered by integration with the Yelp API. Customizable properties (`yelp.host-url` and `yelp.api-key`) streamline this process, ensuring reliable access to Yelp's rich database for real-time restaurant data, thereby enhancing the user experience with accurate and varied dining recommendations.
+
+- **System Flexibility**: Through classes like `AppConfiguration` and `RestTemplateConfig`, the application demonstrates flexibility in setup and external communications. These configurations facilitate efficient object mapping and API interactions, laying the foundation for a scalable and maintainable codebase.
+
+- **API Documentation with Swagger UI**: UFood leverages Swagger UI to document its API, configured via `SwaggerConfig`. This approach not only makes the API more accessible to developers but also supports transparent and easy integration, promoting an open developer community around the platform.
+
+### 🔐 Security and Authentication
+UFood's security strategy is comprehensive, ensuring the integrity, confidentiality, and availability of user data:
+
+- **HTTPS Enforcement**: All traffic is encrypted using HTTPS, protecting data in transit against eavesdropping and tampering.
+
+- **Token-Based Authentication**: Leveraging JWT for secure, stateless authentication allows for efficient user identification and session management without compromising security.
+
+- **Data Protection**: Sensitive data, including user credentials, is encrypted using advanced algorithms before storage, mitigating risks associated with data breaches.
+
+- **Proactive Security Measures**: Regular security assessments and adherence to best practices in application security help in promptly identifying and mitigating vulnerabilities.
+
+- **Access Control**: Implementing Role-Based Access Control (RBAC) ensures users have access only to features and data pertinent to their role, further securing the application against unauthorized use.
+
+### 📝 Versioning and CI/CD
+Version control and continuous integration/continuous deployment (CI/CD) are pivotal in the development lifecycle of UFood, ensuring code quality and facilitating seamless deployments:
+
+- **Semantic Versioning**: Adopting semantic versioning helps manage releases through meaningful version numbers, making it easier to track changes and manage dependencies.
+
+- **Git and GitHub**: Utilizing Git for version control, with GitHub as the repository hosting service, enhances collaboration and streamlines change management, allowing for a well-organized and collaborative development process.
+
+- **CircleCI Integration**: The integration with CircleCI automates the build, test, and deployment pipelines. This setup supports:
+    - Continuous testing to maintain high-quality code standards.
+    - Automated deployments, enabling quick and reliable delivery of new features and updates to users.
+    - Real-time feedback on the health of the application, guiding immediate improvements.
+
 
 ## Getting Started
 To run this project you will need Java, Gradle, and npm install in your system:
